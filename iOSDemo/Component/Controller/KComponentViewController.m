@@ -16,6 +16,8 @@
 #import "KImageViewController.h"
 #import "KImagesViewController.h"
 #import "KWeChatImagesViewController.h"
+#import "KDownloadFileViewController.h"
+
 @interface KComponentViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic,strong) UITableView *tableView;
@@ -35,6 +37,7 @@
                            @{@"title":@"图片缓存、缩放",@"type":@"ImageView"},
                            @{@"title":@"轮播图",@"type":@"ImagesView"},
                            @{@"title":@"图片展示（仿微信）",@"type":@"WeChatImagesView"},
+                           @{@"title":@"下载文件（支持暂停）",@"type":@"DownloadFile"}
                            ];
         KComponentModel *model;
         for (NSDictionary *dic in array) {
@@ -103,6 +106,9 @@
     }
     if ([type isEqualToString:@"WeChatImagesView"]) {
         vc = [[KWeChatImagesViewController alloc] init];
+    }
+    if ([type isEqualToString:@"DownloadFile"]) {
+        vc = [[KDownloadFileViewController alloc] init];
     }
     if ([vc class] != [UIViewController class]) {
         [self.navigationController pushViewController:vc animated:YES];
