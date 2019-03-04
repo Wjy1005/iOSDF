@@ -2,7 +2,7 @@
 //  KVideoPickerViewController.h
 //  iOSDemo
 //
-//  Created by Javictory on 2019/1/23.
+//  Created by Javictory on 2019/3/4.
 //  Copyright © 2019年 Javictory. All rights reserved.
 //
 

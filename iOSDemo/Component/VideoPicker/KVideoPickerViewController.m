@@ -2,101 +2,85 @@
 //  KVideoPickerViewController.m
 //  iOSDemo
 //
-//  Created by Javictory on 2019/1/23.
+//  Created by Javictory on 2019/3/4.
 //  Copyright © 2019年 Javictory. All rights reserved.
 //
 
 #import "KVideoPickerViewController.h"
+#import "SCCameraVideoViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "WBTakeVideoViewController.h"
-#import <MobileCoreServices/MobileCoreServices.h>
 #import <Photos/Photos.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <AVFoundation/AVAsset.h>
 
-@interface KVideoPickerViewController ()<WBVideoViewControllerDelegate, TakeVideoDelegate, UIImagePickerControllerDelegate>
+@interface KVideoPickerViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, strong) UIButton *vedioBtn;
-@property (nonatomic, strong) UIButton *getVedioBtn;
+@property (nonatomic, strong) UIButton *videoPickerBtn;
+@property (nonatomic, assign) int recordTime;       //录制时间
 @property (nonatomic, strong) UIImagePickerController *imagePickerCtr;
 
 @end
 
 @implementation KVideoPickerViewController
 
-
-
--(UIButton *)vedioBtn{
-    if (!_vedioBtn) {
-        _vedioBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 10, 300, 50)];
-        [_vedioBtn setTitle:@"拍摄视频" forState:UIControlStateNormal];
-        [_vedioBtn setBackgroundColor:[UIColor orangeColor]];
-        [_vedioBtn setTintColor:[UIColor whiteColor]];
-        [_vedioBtn addTarget:self action:@selector(vedioBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+- (UIButton *)_videoPickerBtn {
+    if (!_videoPickerBtn) {
+        _videoPickerBtn = [[UIButton alloc] initWithFrame:CGRectMake(64, 0, KScreenWidth, 100)];
+        [_videoPickerBtn setTitle:@"video" forState:UIControlStateNormal];
+        [_videoPickerBtn addTarget:self action:@selector(clickVideoPicker:) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _vedioBtn;
+    return _videoPickerBtn;
 }
 
--(UIButton *)getVedioBtn{
-    if (!_getVedioBtn) {
-        _getVedioBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, CGRectGetMaxY(self.vedioBtn.frame) + 10, 300, 50)];
-        [_getVedioBtn setTitle:@"获取视频" forState:UIControlStateNormal];
-        [_getVedioBtn setBackgroundColor:[UIColor orangeColor]];
-        [_getVedioBtn setTintColor:[UIColor whiteColor]];
-        [_getVedioBtn addTarget:self action:@selector(getVedioBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+-(UIImagePickerController *)imagePickerCtr{
+    if (!_imagePickerCtr) {
+        _imagePickerCtr = [[UIImagePickerController alloc] init];
+        _imagePickerCtr.delegate = self;
+        //iOS8以后拍照的页面跳转会卡顿几秒中，加入这个属性，卡顿消失
+        _imagePickerCtr.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     }
-    return _getVedioBtn;
+    return _imagePickerCtr;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-
-    [self.view addSubview:self.vedioBtn];
-    [self.view addSubview:self.getVedioBtn];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_videoPickerBtn];
+    
+    self.recordTime = 10;
     // Do any additional setup after loading the view.
 }
 
-
-#pragma mark -- 获取视频
-- (void)getVedioBtnClick: (UIButton *)button {
-    [self getVideo];
+- (void)clickVideoPicker:(UIButton *)sender {
+    NSString *title = @"请选择";
+    NSString *cancelTitle = @"取消";
+    NSString *recordVideoButtonTitle = @"拍摄";
+    NSString *chooseFromLibraryButtonTitle = @"从相册获取";
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+        //           reject(unUserInfo, , nil);
+    }];
+    [alertController addAction:cancelAction];
+    UIAlertAction *recordVideoAction = [UIAlertAction actionWithTitle:recordVideoButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self recordVideo];
+    }];
+    [alertController addAction:recordVideoAction];
+    UIAlertAction *chooseFromLibraryAction = [UIAlertAction actionWithTitle:chooseFromLibraryButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self getVideo];
+    }];
+    [alertController addAction:chooseFromLibraryAction];
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)getVideo{
-    // 设置选择载相册的图片或视频
-    self.imagePickerCtr.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    
-    self.imagePickerCtr.mediaTypes = @[(NSString *)kUTTypeMovie];
-    
-    //    self.imagePickerCtr.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    //是否允许编辑
-    self.imagePickerCtr.allowsEditing = NO;
-    // 显示picker视图控制器
-    [self presentViewController:self.imagePickerCtr animated:YES completion:nil];
-    
-}
-#pragma mark -- 拍摄视频
-- (void)vedioBtnClick:(UIButton *)button {
-    [self recordVideo];
-}
-
+//检查权限，保证保存视频成功
 - (void)recordVideo {
     NSString *unUserInfo = nil;
     if (TARGET_IPHONE_SIMULATOR) {
         unUserInfo = @"您的设备不支持此功能";
     }
-    AVAuthorizationStatus videoAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    if(videoAuthStatus == PHAuthorizationStatusRestricted || videoAuthStatus == PHAuthorizationStatusDenied){
-        unUserInfo = @"相机访问受限";
-    }
-    AVAuthorizationStatus audioAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
-    if(audioAuthStatus == PHAuthorizationStatusRestricted || audioAuthStatus == PHAuthorizationStatusDenied){
-        unUserInfo = @"录音访问受限";
-    }
-    PHAuthorizationStatus author = [PHPhotoLibrary authorizationStatus];
-    if (author == AVAuthorizationStatusRestricted || author == AVAuthorizationStatusDenied){
-        unUserInfo = @"相册访问权限受限";
-    }
+    //保存一张不存在的图片，保证第一次访问时可以正常保存
+    UIImageWriteToSavedPhotosAlbum([UIImage imageNamed:@"logo1"], self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     if (unUserInfo != nil) {
         [self alertWithClick:unUserInfo];
     } else {
@@ -104,92 +88,44 @@
     }
 }
 
-- (void)showVideoPicker
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        NSString *title = @"请选择";
-        NSString *cancelTitle = @"取消";
-        NSString *recordVideoButtonTitle = @"拍摄";
-        NSString *chooseFromLibraryButtonTitle = @"从相册获取";
-        
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
-            //           reject(unUserInfo, , nil);
-        }];
-        [alertController addAction:cancelAction];
-        
-        UIAlertAction *recordVideoAction = [UIAlertAction actionWithTitle:recordVideoButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            [self recordVideo];
-        }];
-        [alertController addAction:recordVideoAction];
-        
-        UIAlertAction *chooseFromLibraryAction = [UIAlertAction actionWithTitle:chooseFromLibraryButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            [self getVideo];
-        }];
-        [alertController addAction:chooseFromLibraryAction];
-        
-        [self presentViewController:alertController animated:YES completion:nil];
-    });
-}
-
+#pragma mark -- 录制视频
 - (void)pushWithTakeVideo {
-    WBTakeVideoViewController *videoVC = [[WBTakeVideoViewController alloc]init];
-    videoVC.delegate = self;
-    videoVC.takeDelegate = self;
-    videoVC.vedioBlock = ^(NSDictionary * _Nonnull dic) {
-        NSLog(@"%@",dic);
+    SCCameraVideoViewController *vc = [[SCCameraVideoViewController alloc] init];
+    vc.recordTime = self.recordTime;
+    vc.sendVideoBlock = ^(NSString *videofilePath, UIImage *image) {
+        //保存首帧截图
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+        NSString *thumPath = [[paths objectAtIndex:0]stringByAppendingPathComponent:
+                              [NSString stringWithFormat:@"thumImg.png"]];
+        [UIImagePNGRepresentation(image) writeToFile:thumPath atomically:YES];
     };
-    [self presentViewController:videoVC animated:YES completion:nil];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
+#pragma mark -- 相册获取
+- (void)getVideo {
+    // 设置选择载相册的图片或视频
+    self.imagePickerCtr.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    self.imagePickerCtr.mediaTypes = @[(NSString *)kUTTypeMovie];
+    //    self.imagePickerCtr.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    //是否允许编辑
+    self.imagePickerCtr.allowsEditing = NO;
+    // 显示picker视图控制器
+    [self.navigationController presentViewController:self.imagePickerCtr animated:YES completion:nil];
+}
+
+//提示框
 - (void)alertWithClick:(NSString *)msg {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:msg preferredStyle:1];
-    
-    UIAlertAction *action    = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        //        [SVProgressHUD dismiss];
-    }];
-    
+    UIAlertAction *action    = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
     [alert addAction:action];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-#pragma mark -- WBTake delegate
-- (void)videoViewController:(WBTakeVideoViewController *)videoController didRecordVideo:(WBVideoModel *)videoModel{
     
+    [self.navigationController presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)takeVideoDelegateAction:(NSString *)videoPath{
-    NSLog(@"videoPath: %@",videoPath);
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    if(error == nil) {
+    }else{
+    }
 }
-
-#pragma mark -- delegate
-#pragma mark - 当用户选择图片或者拍照完成时，调用该方法
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    NSLog(@"info--->成功：%@", info);
-    NSDictionary *dic = [NSDictionary dictionaryWithDictionary:[self getVideoInfoWithSourcePath:[info objectForKey:UIImagePickerControllerMediaURL]]];
-    
-    NSLog(@"%@",dic);
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - 当用户取消时，调用该方法
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    NSLog(@"用户取消！");
-    // 隐藏UIImagePickerController
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (NSDictionary *)getVideoInfoWithSourcePath:(NSURL *)path{
-    
-    NSDictionary *opts = [NSDictionary dictionaryWithObject:@(NO) forKey:AVURLAssetPreferPreciseDurationAndTimingKey];
-    AVURLAsset *urlAsset = [AVURLAsset URLAssetWithURL:path options:opts]; // 初始化视频媒体文件
-    NSUInteger second = 0;
-    second =  (int)roundf(1.0 * urlAsset.duration.value / urlAsset.duration.timescale); // 获取视频总时长,单位秒
-    
-    return @{ @"duration" : @(second)};
-}
-
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C11BA04222CF4F80094BFA7 /* SCCameraVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C11BA03222CF4F80094BFA7 /* SCCameraVideoViewController.m */; };
+		4C11BA07222CF53C0094BFA7 /* KVideoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C11BA06222CF53C0094BFA7 /* KVideoPickerViewController.m */; };
+		4C11BA0A222CF8F40094BFA7 /* ClearCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C11BA08222CF8F40094BFA7 /* ClearCacheTool.m */; };
 		4C537BFD219A9D5100A35584 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C537BFC219A9D5100A35584 /* AppDelegate.m */; };
 		4C537C03219A9D5100A35584 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C537C01219A9D5100A35584 /* Main.storyboard */; };
 		4C537C06219A9D5100A35584 /* iOSDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C537C04219A9D5100A35584 /* iOSDemo.xcdatamodeld */; };
@@ -42,11 +45,7 @@
 		4C5B6B7B21F844A90092DB2A /* KDownloadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B6B7A21F844A90092DB2A /* KDownloadFileViewController.m */; };
 		4C5B6B8021F848A80092DB2A /* YJTDocUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B6B7C21F848A70092DB2A /* YJTDocUploadModel.m */; };
 		4C5B6B8121F848A80092DB2A /* SYDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B6B7F21F848A70092DB2A /* SYDownloadTask.m */; };
-		4C5B6B8521F84B490092DB2A /* KVideoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B6B8421F84B490092DB2A /* KVideoPickerViewController.m */; };
 		4C5B6B8721F84D180092DB2A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5B6B8621F84D180092DB2A /* Security.framework */; };
-		4C5B6B8E21F84DA40092DB2A /* WBTakeVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B6B8821F84DA30092DB2A /* WBTakeVideoViewController.m */; };
-		4C5B6B8F21F84DA40092DB2A /* WBVideoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B6B8921F84DA30092DB2A /* WBVideoConfig.m */; };
-		4C5B6B9021F84DA40092DB2A /* WBVideoSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B6B8D21F84DA40092DB2A /* WBVideoSupport.m */; };
 		4C5B6B9221F84E530092DB2A /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5B6B9121F84E530092DB2A /* CoreServices.framework */; };
 		4CE512EF21A2A2AA000E24D2 /* KImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE512EE21A2A2AA000E24D2 /* KImageView.m */; };
 		4CE512F521A2B1DF000E24D2 /* KPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE512F421A2B1DF000E24D2 /* KPhotosView.m */; };
@@ -60,6 +59,12 @@
 		28F397703AC3C532214A2563 /* Pods-iOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		33946B1420F0A688F7A41FF4 /* Pods-iOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4127926202D284D59B510B38 /* libPods-iOSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C11BA02222CF4F80094BFA7 /* SCCameraVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCameraVideoViewController.h; sourceTree = "<group>"; };
+		4C11BA03222CF4F80094BFA7 /* SCCameraVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCameraVideoViewController.m; sourceTree = "<group>"; };
+		4C11BA05222CF53C0094BFA7 /* KVideoPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVideoPickerViewController.h; sourceTree = "<group>"; };
+		4C11BA06222CF53C0094BFA7 /* KVideoPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVideoPickerViewController.m; sourceTree = "<group>"; };
+		4C11BA08222CF8F40094BFA7 /* ClearCacheTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearCacheTool.m; sourceTree = "<group>"; };
+		4C11BA09222CF8F40094BFA7 /* ClearCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCacheTool.h; sourceTree = "<group>"; };
 		4C537BF8219A9D5100A35584 /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C537BFB219A9D5100A35584 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C537BFC219A9D5100A35584 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,15 +130,7 @@
 		4C5B6B7D21F848A70092DB2A /* YJTDocUploadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJTDocUploadModel.h; sourceTree = "<group>"; };
 		4C5B6B7E21F848A70092DB2A /* SYDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDownloadTask.h; sourceTree = "<group>"; };
 		4C5B6B7F21F848A70092DB2A /* SYDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDownloadTask.m; sourceTree = "<group>"; };
-		4C5B6B8321F84B490092DB2A /* KVideoPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVideoPickerViewController.h; sourceTree = "<group>"; };
-		4C5B6B8421F84B490092DB2A /* KVideoPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVideoPickerViewController.m; sourceTree = "<group>"; };
 		4C5B6B8621F84D180092DB2A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		4C5B6B8821F84DA30092DB2A /* WBTakeVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTakeVideoViewController.m; sourceTree = "<group>"; };
-		4C5B6B8921F84DA30092DB2A /* WBVideoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBVideoConfig.m; sourceTree = "<group>"; };
-		4C5B6B8A21F84DA30092DB2A /* WBVideoSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBVideoSupport.h; sourceTree = "<group>"; };
-		4C5B6B8B21F84DA40092DB2A /* WBTakeVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTakeVideoViewController.h; sourceTree = "<group>"; };
-		4C5B6B8C21F84DA40092DB2A /* WBVideoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBVideoConfig.h; sourceTree = "<group>"; };
-		4C5B6B8D21F84DA40092DB2A /* WBVideoSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBVideoSupport.m; sourceTree = "<group>"; };
 		4C5B6B9121F84E530092DB2A /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		4CE512ED21A2A2AA000E24D2 /* KImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KImageView.h; sourceTree = "<group>"; };
 		4CE512EE21A2A2AA000E24D2 /* KImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KImageView.m; sourceTree = "<group>"; };
@@ -445,14 +442,12 @@
 		4C5B6B8221F84B330092DB2A /* VideoPicker */ = {
 			isa = PBXGroup;
 			children = (
-				4C5B6B8B21F84DA40092DB2A /* WBTakeVideoViewController.h */,
-				4C5B6B8821F84DA30092DB2A /* WBTakeVideoViewController.m */,
-				4C5B6B8C21F84DA40092DB2A /* WBVideoConfig.h */,
-				4C5B6B8921F84DA30092DB2A /* WBVideoConfig.m */,
-				4C5B6B8A21F84DA30092DB2A /* WBVideoSupport.h */,
-				4C5B6B8D21F84DA40092DB2A /* WBVideoSupport.m */,
-				4C5B6B8321F84B490092DB2A /* KVideoPickerViewController.h */,
-				4C5B6B8421F84B490092DB2A /* KVideoPickerViewController.m */,
+				4C11BA09222CF8F40094BFA7 /* ClearCacheTool.h */,
+				4C11BA08222CF8F40094BFA7 /* ClearCacheTool.m */,
+				4C11BA02222CF4F80094BFA7 /* SCCameraVideoViewController.h */,
+				4C11BA03222CF4F80094BFA7 /* SCCameraVideoViewController.m */,
+				4C11BA05222CF53C0094BFA7 /* KVideoPickerViewController.h */,
+				4C11BA06222CF53C0094BFA7 /* KVideoPickerViewController.m */,
 			);
 			path = VideoPicker;
 			sourceTree = "<group>";
@@ -622,6 +617,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C537C76219BCC2D00A35584 /* KComponentViewController.m in Sources */,
+				4C11BA07222CF53C0094BFA7 /* KVideoPickerViewController.m in Sources */,
 				4C537C48219AC10700A35584 /* KTabBar.m in Sources */,
 				4C537C5B219AC85A00A35584 /* UIImage+Extension.m in Sources */,
 				4C537C57219AC85A00A35584 /* Foundation+Log.m in Sources */,
@@ -632,27 +628,25 @@
 				4C537C8E219C12AB00A35584 /* KRadioModel.m in Sources */,
 				4C537C59219AC85A00A35584 /* NSString+Emoji.m in Sources */,
 				4CE512FA21A3AAA1000E24D2 /* KImageViewController.m in Sources */,
+				4C11BA0A222CF8F40094BFA7 /* ClearCacheTool.m in Sources */,
 				4C537C94219D106700A35584 /* KTakePhotoViewController.m in Sources */,
-				4C5B6B8E21F84DA40092DB2A /* WBTakeVideoViewController.m in Sources */,
 				4CE5130021A4F120000E24D2 /* KWeChatImagesViewController.m in Sources */,
+				4C11BA04222CF4F80094BFA7 /* SCCameraVideoViewController.m in Sources */,
 				4C537C88219BFE0F00A35584 /* KRadioViewController.m in Sources */,
 				4C537C8B219C048100A35584 /* KRadioView.m in Sources */,
 				4C537C45219ABF6C00A35584 /* KTabBarController.m in Sources */,
 				4C537C79219BCC5800A35584 /* KComponentTableViewCell.m in Sources */,
 				4CE512FD21A3B414000E24D2 /* KImagesViewController.m in Sources */,
-				4C5B6B9021F84DA40092DB2A /* WBVideoSupport.m in Sources */,
 				4C537C0E219A9D5700A35584 /* main.m in Sources */,
 				4C5B6B8021F848A80092DB2A /* YJTDocUploadModel.m in Sources */,
 				4CE512EF21A2A2AA000E24D2 /* KImageView.m in Sources */,
 				4C537C60219ACA5F00A35584 /* KNavigationController.m in Sources */,
-				4C5B6B8521F84B490092DB2A /* KVideoPickerViewController.m in Sources */,
 				4C5B6B7B21F844A90092DB2A /* KDownloadFileViewController.m in Sources */,
 				4C537C81219BFBA700A35584 /* KComponentModel.m in Sources */,
 				4C537C5D219AC85A00A35584 /* UIBarButtonItem+Extension.m in Sources */,
 				4C537C3C219AB8BD00A35584 /* KHomeViewController.m in Sources */,
 				4C5B6B8121F848A80092DB2A /* SYDownloadTask.m in Sources */,
 				4C537C06219A9D5100A35584 /* iOSDemo.xcdatamodeld in Sources */,
-				4C5B6B8F21F84DA40092DB2A /* WBVideoConfig.m in Sources */,
 				4C537CA6219D76B600A35584 /* KTakePhotosViewController.m in Sources */,
 				4C537C32219AA61A00A35584 /* LoginViewController.m in Sources */,
 				4CE512F521A2B1DF000E24D2 /* KPhotosView.m in Sources */,
