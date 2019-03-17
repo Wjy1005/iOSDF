@@ -14,30 +14,25 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - GKPhotoBrowser (1.3.9):
+  - FLAnimatedImage (1.0.12)
+  - GKPhotoBrowser (1.3.1):
     - SDWebImage
-  - LFImagePickerController (1.5.7):
-    - LFImagePickerController/Core (= 1.5.7)
-  - LFImagePickerController/Core (1.5.7):
+    - SDWebImage/GIF
+  - LFImagePickerController (1.5.4):
+    - LFImagePickerController/Core (= 1.5.4)
+  - LFImagePickerController/Core (1.5.4):
     - LFImagePickerController/LFGifPlayer
     - LFImagePickerController/LFToGIF
-  - LFImagePickerController/LFGifPlayer (1.5.7)
-  - LFImagePickerController/LFToGIF (1.5.7)
-  - LFMediaEditingController (1.2.4):
-    - LFMediaEditingController/JRFilterBar (= 1.2.4)
-    - LFMediaEditingController/JRPickColorView (= 1.2.4)
-    - LFMediaEditingController/LFColorMatrix (= 1.2.4)
-    - LFMediaEditingController/LFPhotoEditingController (= 1.2.4)
-    - LFMediaEditingController/LFVideoEditingController (= 1.2.4)
-  - LFMediaEditingController/JRFilterBar (1.2.4):
-    - LFMediaEditingController/LFColorMatrix
-  - LFMediaEditingController/JRPickColorView (1.2.4)
-  - LFMediaEditingController/LFColorMatrix (1.2.4)
-  - LFMediaEditingController/LFPhotoEditingController (1.2.4):
-    - LFMediaEditingController/JRFilterBar
+  - LFImagePickerController/LFGifPlayer (1.5.4)
+  - LFImagePickerController/LFToGIF (1.5.4)
+  - LFMediaEditingController (1.2.3):
+    - LFMediaEditingController/JRPickColorView (= 1.2.3)
+    - LFMediaEditingController/LFPhotoEditingController (= 1.2.3)
+    - LFMediaEditingController/LFVideoEditingController (= 1.2.3)
+  - LFMediaEditingController/JRPickColorView (1.2.3)
+  - LFMediaEditingController/LFPhotoEditingController (1.2.3):
     - LFMediaEditingController/JRPickColorView
-  - LFMediaEditingController/LFVideoEditingController (1.2.4):
-    - LFMediaEditingController/JRFilterBar
+  - LFMediaEditingController/LFVideoEditingController (1.2.3):
     - LFMediaEditingController/JRPickColorView
   - Masonry (1.1.0)
   - SDCycleScrollView (1.75):
@@ -45,6 +40,9 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SDWebImage/GIF (4.4.2):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - VIPhotoView (0.1)
 
 DEPENDENCIES:
@@ -60,6 +58,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - FLAnimatedImage
     - GKPhotoBrowser
     - LFImagePickerController
     - LFMediaEditingController
@@ -70,9 +69,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  GKPhotoBrowser: 757dc391c3da74546ac8eeed57f2171477f52533
-  LFImagePickerController: 3dce950b29857abb9f7235eb5a512d5cdedb12e1
-  LFMediaEditingController: c7d09dd31da366adb0e68c74fd1b40271f6ac220
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  GKPhotoBrowser: be6ca4b1ee1f40029757ffc236ec27536addff0c
+  LFImagePickerController: 4b0ce6bd4554bc156d255c1280bf83754354241c
+  LFMediaEditingController: bebd55e96ece838a2ca6bb075a911d0af0018310
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
