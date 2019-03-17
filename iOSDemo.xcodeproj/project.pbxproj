@@ -7,14 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C0C0CA2223E3C3100EE37B6 /* WBVideoSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0C9A223E3C3100EE37B6 /* WBVideoSupport.m */; };
-		3C0C0CA3223E3C3100EE37B6 /* WBVideoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0C9B223E3C3100EE37B6 /* WBVideoConfig.m */; };
-		3C0C0CA4223E3C3100EE37B6 /* KRecordVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0C9D223E3C3100EE37B6 /* KRecordVideoViewController.m */; };
-		3C0C0CA5223E3C3100EE37B6 /* WBTakeVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CA0223E3C3100EE37B6 /* WBTakeVideoViewController.m */; };
-		3C0C0CAF223E3C5900EE37B6 /* WBVideoSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CA7223E3C5900EE37B6 /* WBVideoSupport.m */; };
-		3C0C0CB0223E3C5900EE37B6 /* WBVideoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CA9223E3C5900EE37B6 /* WBVideoConfig.m */; };
 		3C0C0CB1223E3C5900EE37B6 /* KVideoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CAC223E3C5900EE37B6 /* KVideoPickerViewController.m */; };
-		3C0C0CB2223E3C5900EE37B6 /* WBTakeVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CAD223E3C5900EE37B6 /* WBTakeVideoViewController.m */; };
+		3C0C0CB8223E3EEB00EE37B6 /* SCCameraVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CB5223E3EEA00EE37B6 /* SCCameraVideoViewController.m */; };
+		3C0C0CB9223E3EEB00EE37B6 /* ClearCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CB6223E3EEA00EE37B6 /* ClearCacheTool.m */; };
 		4C537BFD219A9D5100A35584 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C537BFC219A9D5100A35584 /* AppDelegate.m */; };
 		4C537C03219A9D5100A35584 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C537C01219A9D5100A35584 /* Main.storyboard */; };
 		4C537C06219A9D5100A35584 /* iOSDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C537C04219A9D5100A35584 /* iOSDemo.xcdatamodeld */; };
@@ -62,22 +57,12 @@
 /* Begin PBXFileReference section */
 		28F397703AC3C532214A2563 /* Pods-iOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		33946B1420F0A688F7A41FF4 /* Pods-iOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.release.xcconfig"; sourceTree = "<group>"; };
-		3C0C0C9A223E3C3100EE37B6 /* WBVideoSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBVideoSupport.m; sourceTree = "<group>"; };
-		3C0C0C9B223E3C3100EE37B6 /* WBVideoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBVideoConfig.m; sourceTree = "<group>"; };
-		3C0C0C9C223E3C3100EE37B6 /* WBTakeVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTakeVideoViewController.h; sourceTree = "<group>"; };
-		3C0C0C9D223E3C3100EE37B6 /* KRecordVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRecordVideoViewController.m; sourceTree = "<group>"; };
-		3C0C0C9E223E3C3100EE37B6 /* WBVideoSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBVideoSupport.h; sourceTree = "<group>"; };
-		3C0C0C9F223E3C3100EE37B6 /* KRecordVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRecordVideoViewController.h; sourceTree = "<group>"; };
-		3C0C0CA0223E3C3100EE37B6 /* WBTakeVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTakeVideoViewController.m; sourceTree = "<group>"; };
-		3C0C0CA1223E3C3100EE37B6 /* WBVideoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBVideoConfig.h; sourceTree = "<group>"; };
-		3C0C0CA7223E3C5900EE37B6 /* WBVideoSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBVideoSupport.m; sourceTree = "<group>"; };
 		3C0C0CA8223E3C5900EE37B6 /* KVideoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVideoPickerViewController.h; sourceTree = "<group>"; };
-		3C0C0CA9223E3C5900EE37B6 /* WBVideoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBVideoConfig.m; sourceTree = "<group>"; };
-		3C0C0CAA223E3C5900EE37B6 /* WBTakeVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTakeVideoViewController.h; sourceTree = "<group>"; };
-		3C0C0CAB223E3C5900EE37B6 /* WBVideoSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBVideoSupport.h; sourceTree = "<group>"; };
 		3C0C0CAC223E3C5900EE37B6 /* KVideoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVideoPickerViewController.m; sourceTree = "<group>"; };
-		3C0C0CAD223E3C5900EE37B6 /* WBTakeVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTakeVideoViewController.m; sourceTree = "<group>"; };
-		3C0C0CAE223E3C5900EE37B6 /* WBVideoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBVideoConfig.h; sourceTree = "<group>"; };
+		3C0C0CB4223E3EEA00EE37B6 /* ClearCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCacheTool.h; sourceTree = "<group>"; };
+		3C0C0CB5223E3EEA00EE37B6 /* SCCameraVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCameraVideoViewController.m; sourceTree = "<group>"; };
+		3C0C0CB6223E3EEA00EE37B6 /* ClearCacheTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearCacheTool.m; sourceTree = "<group>"; };
+		3C0C0CB7223E3EEA00EE37B6 /* SCCameraVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCameraVideoViewController.h; sourceTree = "<group>"; };
 		3CFBAB8422281CBC00BAC7B1 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFBAB8622281CBC00BAC7B1 /* libFLAnimatedImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFLAnimatedImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFBAB8822281CBC00BAC7B1 /* libGKPhotoBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGKPhotoBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,40 +173,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C0C0C98223E3C3100EE37B6 /* RecordVideo */ = {
-			isa = PBXGroup;
-			children = (
-				3C0C0C99223E3C3100EE37B6 /* Controller */,
-			);
-			path = RecordVideo;
-			sourceTree = "<group>";
-		};
-		3C0C0C99223E3C3100EE37B6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				3C0C0C9A223E3C3100EE37B6 /* WBVideoSupport.m */,
-				3C0C0C9B223E3C3100EE37B6 /* WBVideoConfig.m */,
-				3C0C0C9C223E3C3100EE37B6 /* WBTakeVideoViewController.h */,
-				3C0C0C9D223E3C3100EE37B6 /* KRecordVideoViewController.m */,
-				3C0C0C9E223E3C3100EE37B6 /* WBVideoSupport.h */,
-				3C0C0C9F223E3C3100EE37B6 /* KRecordVideoViewController.h */,
-				3C0C0CA0223E3C3100EE37B6 /* WBTakeVideoViewController.m */,
-				3C0C0CA1223E3C3100EE37B6 /* WBVideoConfig.h */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		3C0C0CA6223E3C5900EE37B6 /* VideoPicker */ = {
 			isa = PBXGroup;
 			children = (
-				3C0C0CA7223E3C5900EE37B6 /* WBVideoSupport.m */,
+				3C0C0CB4223E3EEA00EE37B6 /* ClearCacheTool.h */,
+				3C0C0CB6223E3EEA00EE37B6 /* ClearCacheTool.m */,
+				3C0C0CB7223E3EEA00EE37B6 /* SCCameraVideoViewController.h */,
+				3C0C0CB5223E3EEA00EE37B6 /* SCCameraVideoViewController.m */,
 				3C0C0CA8223E3C5900EE37B6 /* KVideoPickerViewController.h */,
-				3C0C0CA9223E3C5900EE37B6 /* WBVideoConfig.m */,
-				3C0C0CAA223E3C5900EE37B6 /* WBTakeVideoViewController.h */,
-				3C0C0CAB223E3C5900EE37B6 /* WBVideoSupport.h */,
 				3C0C0CAC223E3C5900EE37B6 /* KVideoPickerViewController.m */,
-				3C0C0CAD223E3C5900EE37B6 /* WBTakeVideoViewController.m */,
-				3C0C0CAE223E3C5900EE37B6 /* WBVideoConfig.h */,
 			);
 			path = VideoPicker;
 			sourceTree = "<group>";
@@ -300,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				3C0C0CA6223E3C5900EE37B6 /* VideoPicker */,
-				3C0C0C98223E3C3100EE37B6 /* RecordVideo */,
 				4C5B6B7821F843F60092DB2A /* DownloadFile */,
 				4CE512F621A3AA8B000E24D2 /* ImageView */,
 				4C537C9D219D73DD00A35584 /* TakePhotos */,
@@ -670,32 +629,27 @@
 				4C537C5B219AC85A00A35584 /* UIImage+Extension.m in Sources */,
 				4C537C57219AC85A00A35584 /* Foundation+Log.m in Sources */,
 				4C537C58219AC85A00A35584 /* UIView+Extension.m in Sources */,
-				3C0C0CA3223E3C3100EE37B6 /* WBVideoConfig.m in Sources */,
 				4C537BFD219A9D5100A35584 /* AppDelegate.m in Sources */,
 				4C537C5C219AC85A00A35584 /* NSDate+Estension.m in Sources */,
 				4C537C5A219AC85A00A35584 /* NSString+Extension.m in Sources */,
 				4C537C8E219C12AB00A35584 /* KRadioModel.m in Sources */,
 				4C537C59219AC85A00A35584 /* NSString+Emoji.m in Sources */,
 				4CE512FA21A3AAA1000E24D2 /* KImageViewController.m in Sources */,
-				3C0C0CA5223E3C3100EE37B6 /* WBTakeVideoViewController.m in Sources */,
 				4C537C94219D106700A35584 /* KTakePhotoViewController.m in Sources */,
 				4CE5130021A4F120000E24D2 /* KWeChatImagesViewController.m in Sources */,
-				3C0C0CB2223E3C5900EE37B6 /* WBTakeVideoViewController.m in Sources */,
 				4C537C88219BFE0F00A35584 /* KRadioViewController.m in Sources */,
 				4C537C8B219C048100A35584 /* KRadioView.m in Sources */,
 				4C537C45219ABF6C00A35584 /* KTabBarController.m in Sources */,
 				4C537C79219BCC5800A35584 /* KComponentTableViewCell.m in Sources */,
 				4CE512FD21A3B414000E24D2 /* KImagesViewController.m in Sources */,
-				3C0C0CAF223E3C5900EE37B6 /* WBVideoSupport.m in Sources */,
+				3C0C0CB9223E3EEB00EE37B6 /* ClearCacheTool.m in Sources */,
 				4C537C0E219A9D5700A35584 /* main.m in Sources */,
 				4C5B6B8021F848A80092DB2A /* YJTDocUploadModel.m in Sources */,
-				3C0C0CB0223E3C5900EE37B6 /* WBVideoConfig.m in Sources */,
 				4CE512EF21A2A2AA000E24D2 /* KImageView.m in Sources */,
 				4C537C60219ACA5F00A35584 /* KNavigationController.m in Sources */,
 				4C5B6B7B21F844A90092DB2A /* KDownloadFileViewController.m in Sources */,
+				3C0C0CB8223E3EEB00EE37B6 /* SCCameraVideoViewController.m in Sources */,
 				4C537C81219BFBA700A35584 /* KComponentModel.m in Sources */,
-				3C0C0CA4223E3C3100EE37B6 /* KRecordVideoViewController.m in Sources */,
-				3C0C0CA2223E3C3100EE37B6 /* WBVideoSupport.m in Sources */,
 				4C537C5D219AC85A00A35584 /* UIBarButtonItem+Extension.m in Sources */,
 				4C537C3C219AB8BD00A35584 /* KHomeViewController.m in Sources */,
 				4C5B6B8121F848A80092DB2A /* SYDownloadTask.m in Sources */,
