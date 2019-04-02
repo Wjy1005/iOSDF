@@ -14,4 +14,8 @@
 @property(nonatomic,copy) NSString *type;         //类型
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
+
+//防止传入的参数为空导致报错
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key;
+
 @end
