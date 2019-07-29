@@ -18,6 +18,7 @@
 #import "KWeChatImagesViewController.h"
 #import "KDownloadFileViewController.h"
 #import "KVideoPickerViewController.h"
+#import "KNavController.h"
 @interface KComponentViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic,strong) UITableView *tableView;
@@ -38,7 +39,8 @@
                            @{@"title":@"轮播图",@"type":@"ImagesView"},
                            @{@"title":@"图片展示（仿微信）",@"type":@"WeChatImagesView"},
                            @{@"title":@"下载文件（支持暂停）",@"type":@"DownloadFile"},
-                           @{@"title":@"录制、选取视频",@"type":@"videoPicker"}
+                           @{@"title":@"录制、选取视频",@"type":@"VideoPicker"},
+                           @{@"title":@"自定义导航",@"type":@"Navigation"}
                            ];
         KComponentModel *model;
         for (NSDictionary *dic in array) {
@@ -74,6 +76,7 @@
     
     [self.view addSubview:self.tableView];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,10 +114,14 @@
     if ([type isEqualToString:@"DownloadFile"]) {
         vc = [[KDownloadFileViewController alloc] init];
     }
-    if ([type isEqualToString:@"videoPicker"]) {
+    if ([type isEqualToString:@"VideoPicker"]) {
         vc = [[KVideoPickerViewController alloc] init];
     }
+    if ([type isEqualToString:@"Navigation"]) {
+        vc = [[KNavController alloc] init];
+    }
     if ([vc class] != [UIViewController class]) {
+        vc.navigationItem.title = model.title;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

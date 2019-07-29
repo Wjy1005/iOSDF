@@ -52,6 +52,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self setupView];
     // Do any additional setup after loading the view.
 }
@@ -108,7 +109,7 @@
             if (tempView) {
                 make.top.mas_equalTo(tempView.mas_bottom).mas_offset(DSCommonMargin);
             }else{
-                make.top.mas_equalTo(radioView.superview).mas_offset(64);
+                make.top.mas_equalTo(radioView.superview).mas_offset(0);
             }
         }];
         tempView = radioView;

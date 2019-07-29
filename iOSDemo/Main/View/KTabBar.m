@@ -33,7 +33,6 @@
     return  self;
 }
 
-
 - (void)setupPlusButton {
     UIButton *plusButton = [[UIButton alloc] init];
     // 设置背景
@@ -55,7 +54,6 @@
     }
 }
 
-
 //布局子控件
 
 - (void)layoutSubviews {
@@ -68,7 +66,11 @@
 
 - (void)setupPlusButtonFrame {
     self.plusButton.size = self.plusButton.currentBackgroundImage.size;
-    self.plusButton.center = CGPointMake(self.width * 0.5, self.height * 0.5);
+    if (self.isIphoneX) {
+        self.plusButton.center = CGPointMake(self.width * 0.5, self.height * 0.5 - 17);
+    } else {
+        self.plusButton.center = CGPointMake(self.width * 0.5, self.height * 0.5);
+    }
 }
 
 - (void)setupAllTabBarButtonsFrame {
@@ -82,14 +84,11 @@
     }
 }
 
-
-
-
 - (void)setupTabBarButtonFrame:(UIView *)tabBarButton atIndex:(int)index
 {
     // 计算button的尺寸
     CGFloat buttonW = self.width / (self.items.count + 1);
-    CGFloat buttonH = self.height;
+    CGFloat buttonH = 44;
     
     tabBarButton.width = buttonW;
     tabBarButton.height = buttonH;

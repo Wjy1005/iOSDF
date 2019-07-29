@@ -8,7 +8,7 @@
 
 #import "KNavigationController.h"
 
-@interface KNavigationController ()
+@interface KNavigationController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -19,29 +19,41 @@
 + (void)initialize
 {
     // 设置UINavigationBarTheme
-    [self setupBarButtonItemTheme];
+    [self setupNavigationBarTheme];
     
     // 设置UIBarButtonItem的主题
     [self setupBarButtonItemTheme];
+    
 }
 
 
 //设置UINavigationBarTheme主题
 + (void)setupNavigationBarTheme {
+    //appearance方法返回一个导航栏的外观对象
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
     
-    UINavigationBar *appearance = [UINavigationBar appearance];
+    //修改了这个外观对象，相当于修改了整个项目中的外观
+    //设置导航栏背景颜色
+    [navigationBar setBarTintColor:[UIColor lightGrayColor]];
+    
     //设置文字属性
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+    textAttrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
     textAttrs[NSFontAttributeName] = DSNavigationFont;
     
     //设置导航栏背景
     if (!iOS7){
-        [appearance setBackgroundImage:[UIImage imageWithName:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
+        [navigationBar setBackgroundImage:[UIImage imageWithName:@"navigationbar_background"] forBarMetrics:UIBarMetricsDefault];
         textAttrs[NSShadowAttributeName] = [[NSShadow alloc] init];
     }
     
-    [appearance setTitleTextAttributes:textAttrs];
+    //设置NavigationBarItem文字的颜色
+    [navigationBar setTintColor:[UIColor whiteColor]];
+    
+    //在设置为NO之后控制器的view自动向下偏移64(导航栏高度的)
+    navigationBar.translucent=NO;
+    
+    [navigationBar setTitleTextAttributes:textAttrs];
     
 }
 
@@ -73,7 +85,8 @@
 {
     [super viewDidLoad];
     
-    
+    // 自定义后退键后遵守右滑手势协议
+    self.interactivePopGestureRecognizer.delegate = self;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -81,11 +94,13 @@
     // 判断是否为栈底控制器
     if (self.viewControllers.count >0) {
         viewController.hidesBottomBarWhenPushed = YES;
+        
         //设置导航子控制器按钮的加载样式
         UINavigationItem *vcBtnItem= [viewController navigationItem];
         
-         vcBtnItem.leftBarButtonItem = [UIBarButtonItem BarButtonItemWithImageName:@"navigationbar_back_withtext" highImageName:@"navigationbar_back_withtext_highlighted" title:nil target:self action:@selector(back)];
-//        vcBtnItem.leftBarButtonItem = [UIBarButtonItem BarButtonItemWithImageName:@"navigationbar_back_withtext" highImageName:@"navigationbar_back_withtext_highlighted" title:[[self.childViewControllers lastObject] title] target:self action:@selector(back)];
+        vcBtnItem.leftBarButtonItem = [UIBarButtonItem BarButtonItemWithImageName:@"navigationbar_back_withtext" highImageName:@"navigationbar_back_withtext_highlighted" title:nil target:self action:@selector(back)];
+        
+        //        vcBtnItem.leftBarButtonItem = [UIBarButtonItem BarButtonItemWithImageName:@"navigationbar_back_withtext" highImageName:@"navigationbar_back_withtext_highlighted" title:[[self.childViewControllers lastObject] title] target:self action:@selector(back)];
     }
     [super pushViewController:viewController animated:YES];
 }
@@ -97,10 +112,11 @@
 
 - (void)more
 {
-    
     //[self popToRootViewControllerAnimated:YES];
 }
 
-
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES; // 默认为支持右滑反回
+}
 
 @end

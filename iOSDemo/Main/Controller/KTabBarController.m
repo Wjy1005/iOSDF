@@ -15,7 +15,7 @@
 
 @property(nonatomic,weak) KHomeViewController *homeVc;
 @property(nonatomic,weak) KComponentViewController *componentVc;
-
+@property (nonatomic, assign, getter=isIphoneX) BOOL iphoneX;
 
 @end
 
@@ -23,6 +23,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (@available(iOS 11.0, *)) {
+        // 利用safeAreaInsets.bottom > 0.0来判断是否是iPhone X以上设备。
+        UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
+        if (window.safeAreaInsets.bottom > 0.0) {
+            self.iphoneX = YES;
+        } else {
+            self.iphoneX = NO;
+        }
+    } else {
+        self.iphoneX = NO;
+    }
     
     //添加所有的自控制器
     [self addAllChildVcs];
@@ -50,6 +62,7 @@
 - (void)addCustomTabBar {
     //创建自定义tabbar
     KTabBar *customTabBar = [[KTabBar alloc] init];
+    customTabBar.iphoneX = self.isIphoneX;
     customTabBar.tabBarDelegate = self;
     
     //更换系统自带的tabbar
@@ -71,6 +84,10 @@
     
     if ([childVc class] == [KComponentViewController class]) {
         childVc.navigationController.title = @"组件库";
+    }
+    
+    if (self.isIphoneX) {
+        childVc.view.height = 68;
     }
     
     //设置图标

@@ -132,7 +132,6 @@
     KTabBarController *vc = [[KTabBarController alloc] init];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     window.rootViewController = vc;
-    
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{

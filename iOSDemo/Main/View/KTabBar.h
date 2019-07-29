@@ -19,5 +19,5 @@
 @interface KTabBar : UITabBar 
 
 @property (nonatomic , weak) id<KTabBarDelegate> tabBarDelegate;
-
+@property (nonatomic, assign, getter=isIphoneX) BOOL iphoneX;
 @end

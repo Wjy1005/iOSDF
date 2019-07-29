@@ -10,6 +10,7 @@
 		3C0C0CB1223E3C5900EE37B6 /* KVideoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CAC223E3C5900EE37B6 /* KVideoPickerViewController.m */; };
 		3C0C0CB8223E3EEB00EE37B6 /* SCCameraVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CB5223E3EEA00EE37B6 /* SCCameraVideoViewController.m */; };
 		3C0C0CB9223E3EEB00EE37B6 /* ClearCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C0CB6223E3EEA00EE37B6 /* ClearCacheTool.m */; };
+		3CCBFBAE22EECF4A00693908 /* KNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCBFBAD22EECF4A00693908 /* KNavController.m */; };
 		4C537BFD219A9D5100A35584 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C537BFC219A9D5100A35584 /* AppDelegate.m */; };
 		4C537C03219A9D5100A35584 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C537C01219A9D5100A35584 /* Main.storyboard */; };
 		4C537C06219A9D5100A35584 /* iOSDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C537C04219A9D5100A35584 /* iOSDemo.xcdatamodeld */; };
@@ -63,6 +64,8 @@
 		3C0C0CB5223E3EEA00EE37B6 /* SCCameraVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCameraVideoViewController.m; sourceTree = "<group>"; };
 		3C0C0CB6223E3EEA00EE37B6 /* ClearCacheTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearCacheTool.m; sourceTree = "<group>"; };
 		3C0C0CB7223E3EEA00EE37B6 /* SCCameraVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCameraVideoViewController.h; sourceTree = "<group>"; };
+		3CCBFBAC22EECF4A00693908 /* KNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNavController.h; sourceTree = "<group>"; };
+		3CCBFBAD22EECF4A00693908 /* KNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNavController.m; sourceTree = "<group>"; };
 		3CFBAB8422281CBC00BAC7B1 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFBAB8622281CBC00BAC7B1 /* libFLAnimatedImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFLAnimatedImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFBAB8822281CBC00BAC7B1 /* libGKPhotoBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGKPhotoBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +189,15 @@
 			path = VideoPicker;
 			sourceTree = "<group>";
 		};
+		3CCBFBA522EECB7100693908 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3CCBFBAC22EECF4A00693908 /* KNavController.h */,
+				3CCBFBAD22EECF4A00693908 /* KNavController.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		4C537BEF219A9D5100A35584 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +271,7 @@
 		4C537C38219AB8A800A35584 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				3CCBFBA522EECB7100693908 /* Navigation */,
 				3C0C0CA6223E3C5900EE37B6 /* VideoPicker */,
 				4C5B6B7821F843F60092DB2A /* DownloadFile */,
 				4CE512F621A3AA8B000E24D2 /* ImageView */,
@@ -642,6 +655,7 @@
 				4C537C45219ABF6C00A35584 /* KTabBarController.m in Sources */,
 				4C537C79219BCC5800A35584 /* KComponentTableViewCell.m in Sources */,
 				4CE512FD21A3B414000E24D2 /* KImagesViewController.m in Sources */,
+				3CCBFBAE22EECF4A00693908 /* KNavController.m in Sources */,
 				3C0C0CB9223E3EEB00EE37B6 /* ClearCacheTool.m in Sources */,
 				4C537C0E219A9D5700A35584 /* main.m in Sources */,
 				4C5B6B8021F848A80092DB2A /* YJTDocUploadModel.m in Sources */,
@@ -799,7 +813,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 76Z422TEWC;
+				DEVELOPMENT_TEAM = ECY7UG34WK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSDemo/Info.plist;
@@ -808,7 +822,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CY.IosDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.centerm.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -820,7 +834,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 76Z422TEWC;
+				DEVELOPMENT_TEAM = ECY7UG34WK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSDemo/Info.plist;
@@ -829,7 +843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CY.IosDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.centerm.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
